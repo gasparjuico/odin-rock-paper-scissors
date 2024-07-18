@@ -8,9 +8,16 @@
 // Main game loop
 
 function getPlayerChoice(){
-  let choice = prompt('Enter rock, paper, or scissors:');
-
-  return choice.toLowerCase();
+  let choice = prompt('Enter rock, paper, or scissors:').toLowerCase();
+  if (
+    (choice !== 'rock') &&
+    (choice !== 'paper') &&
+    (choice !== 'scissors')
+  ){
+    console.log('Please refresh and input rock, paper, or scissors.')
+  } else {
+    return choice;
+  }
 }
 
 function getComputerChoice(){
@@ -25,5 +32,30 @@ function getComputerChoice(){
   }
 }
 
-console.log(getPlayerChoice());
-console.log(getComputerChoice());
+// console.log(getPlayerChoice());
+// console.log(getComputerChoice());
+
+let playerScore = 0;
+let computerScore = 0;
+
+function playRound(playerChoice, computerChoice){
+  if (playerChoice === computerChoice){
+    return "It's a tie!"
+  } else if (
+    (playerChoice === 'rock' && computerChoice == 'scissors') ||
+    (playerChoice === 'paper' && computerChoice == 'rock') ||
+    (playerChoice === 'scissors' && computerChoice == 'paper')
+  ){
+    return 'Player Wins!'
+  } else {
+    return 'Computer Wins!'
+  }
+}
+
+let playerChoice = getPlayerChoice();
+let computerChoice = getComputerChoice();
+
+
+console.log('Player Choice:', playerChoice);
+console.log('Computer Choice:', computerChoice);
+console.log(playRound(playerChoice, computerChoice))
