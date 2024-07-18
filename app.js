@@ -46,16 +46,19 @@ function playRound(playerChoice, computerChoice){
     (playerChoice === 'paper' && computerChoice == 'rock') ||
     (playerChoice === 'scissors' && computerChoice == 'paper')
   ){
-    return 'Player Wins!'
+    playerScore++;
+    return `Player Wins! ${playerChoice} beats ${computerChoice}`;
   } else {
-    return 'Computer Wins!'
+    computerScore++;
+    return `Computer Wins! ${computerChoice} beats ${playerChoice}`;
   }
 }
 
 let playerChoice = getPlayerChoice();
 let computerChoice = getComputerChoice();
 
-
 console.log('Player Choice:', playerChoice);
 console.log('Computer Choice:', computerChoice);
-console.log(playRound(playerChoice, computerChoice))
+console.log(playRound(playerChoice, computerChoice));
+console.log('Player Score:', playerScore);
+console.log('Computer Score:', computerScore);
