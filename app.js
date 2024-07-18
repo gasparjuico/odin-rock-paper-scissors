@@ -40,7 +40,9 @@ let computerScore = 0;
 
 function playRound(playerChoice, computerChoice){
   if (playerChoice === computerChoice){
-    return "It's a tie!"
+    playerScore += 0.5;
+    computerScore += 0.5;
+    return "It's a tie!";
   } else if (
     (playerChoice === 'rock' && computerChoice == 'scissors') ||
     (playerChoice === 'paper' && computerChoice == 'rock') ||
