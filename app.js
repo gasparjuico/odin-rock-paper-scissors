@@ -9,16 +9,26 @@
 
 // Function to get player choice
 function getPlayerChoice(){
-  let choice = prompt('Enter rock, paper, or scissors:').toLowerCase();
-  if (
-    (choice !== 'rock') &&
-    (choice !== 'paper') &&
-    (choice !== 'scissors')
-  ){
-    console.log('Please refresh and input rock, paper, or scissors.')
-  } else {
-    return choice;winCheck
+  let input = false;
+  while (input === false){
+    const choice = prompt('Enter rock, paper, or scissors:');
+    if (choice == null){
+      continue;
+    }
+
+    const choiceLowerCase = choice.toLowerCase();
+    if (
+    (choiceLowerCase !== 'rock') &&
+    (choiceLowerCase !== 'paper') &&
+    (choiceLowerCase !== 'scissors')
+    ){
+      continue;
+    } else{
+      input = true;
+      return choiceLowerCase;
+    }
   }
+
 }
 
 // Function to get computer choice
