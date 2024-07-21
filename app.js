@@ -7,6 +7,7 @@
 // Function to determine winner
 // Main game loop
 
+// Function to get player choice
 function getPlayerChoice(){
   let choice = prompt('Enter rock, paper, or scissors:').toLowerCase();
   if (
@@ -16,10 +17,11 @@ function getPlayerChoice(){
   ){
     console.log('Please refresh and input rock, paper, or scissors.')
   } else {
-    return choice;
+    return choice;winCheck
   }
 }
 
+// Function to get computer choice
 function getComputerChoice(){
   let computerChoice = Math.floor(Math.random() * 3);
 
@@ -32,26 +34,31 @@ function getComputerChoice(){
   }
 }
 
-// console.log(getPlayerChoice());
-// console.log(getComputerChoice());
-
-let playerScore = 0;
-let computerScore = 0;
-
-function playRound(playerChoice, computerChoice){
+// Function to determine winner
+function winCheck(playerChoice, computerChoice){
   if (playerChoice === computerChoice){
     playerScore += 0.5;
     computerScore += 0.5;
-    return "It's a tie!";
+    return 'tie';
   } else if (
     (playerChoice === 'rock' && computerChoice == 'scissors') ||
     (playerChoice === 'paper' && computerChoice == 'rock') ||
     (playerChoice === 'scissors' && computerChoice == 'paper')
   ){
     playerScore++;
-    return `Player Wins! ${playerChoice} beats ${computerChoice}`;
+    return 'player';
   } else {
     computerScore++;
+    return 'computer';
+  }
+}
+
+function playRound(playerChoice, computerChoice){
+  if (winCheck === 'tie'){
+    return "It's a tie.";
+  } else if (winCheck === 'player'){
+    return `Player Wins! ${playerChoice} beats ${computerChoice}`;
+  } else {
     return `Computer Wins! ${computerChoice} beats ${playerChoice}`;
   }
 }
@@ -61,6 +68,8 @@ let computerChoice = getComputerChoice();
 
 console.log('Player Choice:', playerChoice);
 console.log('Computer Choice:', computerChoice);
+// console.log(playRound(playerChoice, computerChoice));
+// console.log('Player Score:', playerScore);
+// console.log('Computer Score:', computerScore);
+
 console.log(playRound(playerChoice, computerChoice));
-console.log('Player Score:', playerScore);
-console.log('Computer Score:', computerScore);
