@@ -60,19 +60,38 @@ function playRound(playerChoice, computerChoice){
   }
 }
 
-// console.log(playRound(playerChoice, computerChoice));
-// console.log('Player Score:', playerScore);
-// console.log('Computer Score:', computerScore);
-
 // main game
 function playGame(){
-  for (let i = 0; i < 5; i++){
+  let playerScore = 0;
+  let computerScore = 0;
+  for (let i = 1; i < 6; i++){
     const playerChoice = getPlayerChoice();
     const computerChoice = getComputerChoice();
-    console.log(`Round ${i}`)
+    console.log(`Round ${i}`);
     console.log('Player Choice:', playerChoice);
     console.log('Computer Choice:', computerChoice);
     console.log(playRound(playerChoice, computerChoice));
+    console.log('-----')
+
+    if (winCheck(playerChoice, computerChoice) === 'tie'){
+      playerScore += 0.5;
+      computerScore += 0.5;
+    } else if (winCheck(playerChoice, computerChoice) === 'player'){
+      playerScore++;
+    } else {
+      computerScore++;
+    }
+  }
+
+  console.log('Player Score:', playerScore);
+  console.log('Computer Score:', computerScore);
+
+  if (playerScore === computerScore){
+    console.log('Game ends in a draw');
+  } else if (playerScore > computerScore){
+    console.log('Game over! Player wins');
+  } else{
+    console.log('Game over! Computer wins');
   }
 }
 
