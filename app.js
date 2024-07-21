@@ -37,39 +37,43 @@ function getComputerChoice(){
 // Function to determine winner
 function winCheck(playerChoice, computerChoice){
   if (playerChoice === computerChoice){
-    playerScore += 0.5;
-    computerScore += 0.5;
     return 'tie';
   } else if (
     (playerChoice === 'rock' && computerChoice == 'scissors') ||
     (playerChoice === 'paper' && computerChoice == 'rock') ||
     (playerChoice === 'scissors' && computerChoice == 'paper')
   ){
-    playerScore++;
     return 'player';
   } else {
-    computerScore++;
     return 'computer';
   }
 }
 
 function playRound(playerChoice, computerChoice){
-  if (winCheck === 'tie'){
+  const result = winCheck(playerChoice, computerChoice);
+  if (result === 'tie'){
     return "It's a tie.";
-  } else if (winCheck === 'player'){
+  } else if (result === 'player'){
     return `Player Wins! ${playerChoice} beats ${computerChoice}`;
   } else {
     return `Computer Wins! ${computerChoice} beats ${playerChoice}`;
   }
 }
 
-let playerChoice = getPlayerChoice();
-let computerChoice = getComputerChoice();
-
-console.log('Player Choice:', playerChoice);
-console.log('Computer Choice:', computerChoice);
 // console.log(playRound(playerChoice, computerChoice));
 // console.log('Player Score:', playerScore);
 // console.log('Computer Score:', computerScore);
 
-console.log(playRound(playerChoice, computerChoice));
+// main game
+function playGame(){
+  for (let i = 0; i < 5; i++){
+    const playerChoice = getPlayerChoice();
+    const computerChoice = getComputerChoice();
+    console.log(`Round ${i}`)
+    console.log('Player Choice:', playerChoice);
+    console.log('Computer Choice:', computerChoice);
+    console.log(playRound(playerChoice, computerChoice));
+  }
+}
+
+console.log(playGame());
