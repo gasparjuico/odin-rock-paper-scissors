@@ -1,4 +1,3 @@
-// Function to get player choice
 function getPlayerChoice(){
   let input = false;
   while (input === false){
@@ -19,13 +18,10 @@ function getPlayerChoice(){
       return choiceLowerCase;
     }
   }
-
 }
 
-// Function to get computer choice
 function getComputerChoice(){
   let computerChoice = Math.floor(Math.random() * 3);
-
   if (computerChoice === 0){
     return 'rock';
   } else if (computerChoice === 1) {
@@ -35,7 +31,6 @@ function getComputerChoice(){
   }
 }
 
-// Function to determine winner
 function winCheck(playerChoice, computerChoice){
   if (playerChoice === computerChoice){
     return 'tie';
@@ -61,10 +56,10 @@ function playRound(playerChoice, computerChoice){
   }
 }
 
-// main game
 function playGame(){
   let playerScore = 0;
   let computerScore = 0;
+  
   for (let i = 1; i < 6; i++){
     const playerChoice = getPlayerChoice();
     const computerChoice = getComputerChoice();
