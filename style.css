@@ -6,7 +6,19 @@ h1 {
     text-align: center;
 }
 
-.player-selection {
+.selections-container {
     display: flex;
     justify-content: center;
+    gap: 1rem;
+}
+
+button {
+    width:5rem;
+}
+
+.results-container {
+    display: flex;
+    justify-content: center;
+    gap: 3rem;
+    margin-top: 2rem;
 }
