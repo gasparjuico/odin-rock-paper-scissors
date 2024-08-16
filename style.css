@@ -1,0 +1,12 @@
+body {
+    background-color: bisque;
+}
+
+h1 {
+    text-align: center;
+}
+
+.player-selection {
+    display: flex;
+    justify-content: center;
+}
