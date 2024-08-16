@@ -56,39 +56,39 @@ function playRound(playerChoice, computerChoice){
   }
 }
 
-function playGame(){
-  let playerScore = 0;
-  let computerScore = 0;
+// function playGame(){
+//   let playerScore = 0;
+//   let computerScore = 0;
   
-  for (let i = 1; i < 6; i++){
-    const playerChoice = getPlayerChoice();
-    const computerChoice = getComputerChoice();
-    console.log(`Round ${i}`);
-    console.log('Player Choice:', playerChoice);
-    console.log('Computer Choice:', computerChoice);
-    console.log(playRound(playerChoice, computerChoice));
-    console.log('-----')
+//   for (let i = 1; i < 6; i++){
+//     const playerChoice = getPlayerChoice();
+//     const computerChoice = getComputerChoice();
+//     console.log(`Round ${i}`);
+//     console.log('Player Choice:', playerChoice);
+//     console.log('Computer Choice:', computerChoice);
+//     console.log(playRound(playerChoice, computerChoice));
+//     console.log('-----')
 
-    if (winCheck(playerChoice, computerChoice) === 'tie'){
-      playerScore += 0.5;
-      computerScore += 0.5;
-    } else if (winCheck(playerChoice, computerChoice) === 'player'){
-      playerScore++;
-    } else {
-      computerScore++;
-    }
-  }
+//     if (winCheck(playerChoice, computerChoice) === 'tie'){
+//       playerScore += 0.5;
+//       computerScore += 0.5;
+//     } else if (winCheck(playerChoice, computerChoice) === 'player'){
+//       playerScore++;
+//     } else {
+//       computerScore++;
+//     }
+//   }
 
-  console.log('Player Score:', playerScore);
-  console.log('Computer Score:', computerScore);
+//   console.log('Player Score:', playerScore);
+//   console.log('Computer Score:', computerScore);
 
-  if (playerScore === computerScore){
-    console.log('Game ends in a draw');
-  } else if (playerScore > computerScore){
-    console.log('Game over! Player wins');
-  } else{
-    console.log('Game over! Computer wins');
-  }
-}
+//   if (playerScore === computerScore){
+//     console.log('Game ends in a draw');
+//   } else if (playerScore > computerScore){
+//     console.log('Game over! Player wins');
+//   } else{
+//     console.log('Game over! Computer wins');
+//   }
+// }
 
-console.log(playGame());
+// console.log(playGame());
