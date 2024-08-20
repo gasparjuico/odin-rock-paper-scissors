@@ -9,16 +9,16 @@ h1 {
 .selections-container {
     display: flex;
     justify-content: center;
-    gap: 1rem;
+    gap: 20px;
 }
 
-button {
-    width:5rem;
+.selection {
+    width:100px;
 }
 
 .results-container {
     display: flex;
     justify-content: center;
-    gap: 3rem;
-    margin-top: 2rem;
+    gap: 40px;
+    margin-top: 20px;
 }
