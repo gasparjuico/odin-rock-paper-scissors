@@ -47,9 +47,19 @@ function playRound(playerChoice, computerChoice){
     }
 
     displayScore();
+    checkWinner();
 }
 
 function displayScore() {
     const scoreContainer = document.querySelector('.score-container');
     scoreContainer.textContent = `Player: ${playerScore} | Computer: ${computerScore}`;
+}
+
+function checkWinner(){
+    const winnnerContainer = document.querySelector('.winner-container');
+    if (playerScore >= 5){
+        winnnerContainer.textContent = 'Player wins!'
+    } else if (computerScore >= 5){
+        winnnerContainer.textContent = 'Computer wins!'
+    }
 }
