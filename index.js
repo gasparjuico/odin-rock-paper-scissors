@@ -56,10 +56,18 @@ function displayScore() {
 }
 
 function checkWinner(){
-    const winnnerContainer = document.querySelector('.winner-container');
+    const winnerContainer = document.querySelector('.winner-container');
     if (playerScore >= 5){
-        winnnerContainer.textContent = 'Player wins!'
+        winnerContainer.textContent = 'Winner: Player';
+        alert("Congratulations! Player wins.");
+        playerScore = 0;
+        computerScore = 0;
     } else if (computerScore >= 5){
-        winnnerContainer.textContent = 'Computer wins!'
+        winnerContainer.textContent = 'Winner: Computer!';
+        alert("Better luck next time. Computer wins.");
+        playerScore = 0;
+        computerScore = 0;
+    } else {
+        winnerContainer.textContent = '';
     }
 }
